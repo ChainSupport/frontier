@@ -171,6 +171,14 @@ impl From<AccountId32> for AccountId20 {
 	}
 }
 
+
+// fixme
+impl From<AccountId20> for [u8; 32] {
+	fn from(value: AccountId20) -> Self {
+		todo!()
+	}
+}
+
 #[derive(Clone, Eq, PartialEq)]
 #[derive(RuntimeDebug, Encode, Decode, MaxEncodedLen, TypeInfo)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
