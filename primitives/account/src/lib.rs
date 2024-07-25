@@ -172,10 +172,12 @@ impl From<AccountId32> for AccountId20 {
 }
 
 
-// fixme
 impl From<AccountId20> for [u8; 32] {
 	fn from(value: AccountId20) -> Self {
-		todo!()
+		let mut array = [0u8; 32];
+		// 将 AccountId20 的前 20 个字节复制到新的 32 字节数组中
+		array[..20].copy_from_slice(&value.0);
+		array
 	}
 }
 
