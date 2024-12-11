@@ -341,6 +341,9 @@ pub mod pallet {
 	#[pallet::storage]
 	pub type BlockHash<T: Config> = StorageMap<_, Twox64Concat, U256, H256, ValueQuery>;
 
+	#[pallet::storage]
+	pub type StorageVersion<T: Config> = StorageValue<_, u32, ValueQuery>;
+
 	#[pallet::genesis_config]
 	#[derive(frame_support::DefaultNoBound)]
 	pub struct GenesisConfig<T> {
